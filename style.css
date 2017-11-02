@@ -1,0 +1,85 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	background: #000;
+	font-family: Poppins, sans-serif;
+	font-weight: 700;
+}
+.box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 2.2rem;
+	cursor: pointer;
+}
+a {
+	text-decoration: none;
+}
+.box h1 {
+	text-align: center;
+	font-size: 3rem;
+	margin: 0;
+	color: black;
+	text-decoration: none;
+}
+.box p {
+	font-style: italic;
+	margin: 0;
+}
+.main .box:hover h1 {
+		transform: scale(1.05)
+}
+.main {
+	height: 100vh;
+	background: #000;
+	display: grid;
+	grid-gap: 8px;
+	padding: 8px;
+	grid-template:
+		[row1-start] "header header" .8fr [row1-end]
+		[row2-start] "portfolio links" 1fr [row2-end]
+		[row3-start] "social-media contact" 1fr [row3-end]
+		/ 1fr 1fr;
+}
+.header {
+	grid-area: header;
+	background: #fff;
+	
+}
+.header img {
+	width: 40%;
+}
+.portfolio {
+	background: #fcd000;
+	grid-area: portfolio;
+}
+.contact {
+	background: #44c6e4;
+	grid-area: contact;
+}
+.social-media {
+	background: #e6aae1;
+	grid-area: social-media;
+}
+.links {
+	background: #af82ff;
+	grid-area: links;
+}
+@media (max-width: 800px)  {
+	html {
+		font-size: 12px; 
+	}
+	.main {
+		grid-template:
+			[row1-start] "header" 1fr [row1-end]
+			[row2-start] "portfolio" 1fr [row2-end]
+			[row3-start] "links" 1fr [row3-end]
+			[row4-start] "social-media" 1fr [row4-end]
+			[row5-start] "contact" 1fr [row5-end]
+			/ 1fr;
+	}
+	
+}
